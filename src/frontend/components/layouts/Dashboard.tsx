@@ -1,6 +1,19 @@
 import React, { PropsWithChildren } from 'react';
 import Head from 'next/head';
-export default function Dashboard({ children }: PropsWithChildren) {
+import { NextSeo } from 'next-seo';
+
+type IDashboardProps = {
+	title: string;
+	description: string;
+	canonical: string;
+};
+
+export default function Dashboard({
+	children,
+	title,
+	description,
+	canonical,
+}: PropsWithChildren<IDashboardProps>) {
 	return (
 		<>
 			<Head>
@@ -33,6 +46,18 @@ export default function Dashboard({ children }: PropsWithChildren) {
 				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
+				<NextSeo
+					title={title}
+					description={description}
+					canonical={canonical}
+					openGraph={{
+						title: title,
+						description: description,
+						url: canonical,
+						locale: process.env.NEXT_PUBLIC_LOCALE,
+						site_name: process.env.NEXT_PUBLIC_SITENAME,
+					}}
+				/>
 			</Head>
 			<div>{children}</div>
 		</>

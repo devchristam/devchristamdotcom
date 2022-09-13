@@ -8,7 +8,15 @@ const Home: NextPageWithLayout = () => {
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-	return <Dashboard>{page}</Dashboard>;
+	return (
+		<Dashboard
+			title="Chris Tam"
+			description="Chris Tam personal website"
+			canonical={process.env.NEXT_PUBLIC_URL ?? ''}
+		>
+			{page}
+		</Dashboard>
+	);
 };
 
 export default Home;
