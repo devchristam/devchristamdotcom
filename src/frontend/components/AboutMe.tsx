@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { IconReact } from './icons/IconReact';
 import { IconVuejs } from './icons/IconVuejs';
 import { IconSass } from './icons/IconSass';
@@ -7,18 +7,50 @@ import { IconLaravel } from './icons/IconLaravel';
 import { IconGitAlt } from './icons/IconGitAlt';
 import { IconPython } from './icons/IconPython';
 import { IconDatabase } from './icons/IconDatabase';
+import { motion, useAnimationControls, useInView } from 'framer-motion';
 
 export const AboutMe = () => {
+	const controlAboutMe = useAnimationControls();
+	const refAboutMe = useRef(null);
+	const inViewAboutMe = useInView(refAboutMe);
+
+	const controlSkill = useAnimationControls();
+	const refSkill = useRef(null);
+	const inViewSkill = useInView(refSkill);
+
+	useEffect(() => {
+		if (inViewAboutMe) {
+			controlAboutMe.start({ opacity: 1, transition: { duration: 1 } });
+		}
+	}, [inViewAboutMe, controlAboutMe]);
+
+	useEffect(() => {
+		if (inViewSkill) {
+			controlSkill.start({ opacity: 1, transition: { duration: 1 } });
+		}
+	}, [inViewSkill, controlSkill]);
+
 	return (
 		<div className="-skew-y-6 bg-gradient-to-r from-green-600 to-gray-800 py-64">
 			<div className="mx-auto max-w-5xl skew-y-6 px-6 text-center">
-				<h2 className="text-5xl font-semibold text-white">About Me</h2>
-				<p className="mt-4 text-2xl text-white">
-					I am Chris Tam from Hong Kong, love to learn new technologies about
-					web development and implement it into my work.
-				</p>
+				<motion.div
+					ref={refAboutMe}
+					initial={{ opacity: 0 }}
+					animate={controlAboutMe}
+				>
+					<h2 className="text-5xl font-semibold text-white">About Me</h2>
+					<p className="mt-4 text-2xl text-white">
+						I am Chris Tam from Hong Kong, love to learn new technologies about
+						web development and implement it into my work.
+					</p>
+				</motion.div>
 			</div>
-			<div className="mx-auto mt-24 max-w-5xl skew-y-6 px-6 text-center">
+			<motion.div
+				ref={refSkill}
+				initial={{ opacity: 0 }}
+				animate={controlSkill}
+				className="mx-auto mt-24 max-w-5xl skew-y-6 px-6 text-center"
+			>
 				<h2 className="text-5xl font-semibold text-white"> Skills </h2>
 				<div className="mt-4 text-xl text-white">
 					<div className="mt-10 flex items-center justify-center">
@@ -75,7 +107,7 @@ export const AboutMe = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

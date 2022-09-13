@@ -1,10 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export const SelfIntro = () => {
 	return (
-		<div className="my-20 bg-white">
-			<div className="mx-auto max-w-2xl px-6 text-center">
+		<div className="my-20 min-h-[70vh] bg-white">
+			<motion.div
+				initial={{ y: 100, opacity: 0 }}
+				animate={{
+					y: 0,
+					opacity: 1,
+					transition: {
+						duration: 1,
+					},
+				}}
+				className="mx-auto max-w-2xl px-6 text-center"
+			>
 				<h2 className="text-5xl font-semibold text-gray-800">
 					Hello, my name is <span className="text-green-400">Chris Tam</span>{' '}
 				</h2>
@@ -23,7 +34,7 @@ export const SelfIntro = () => {
 						priority={true}
 					/>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

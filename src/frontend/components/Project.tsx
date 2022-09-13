@@ -1,11 +1,27 @@
+import { motion, useAnimationControls, useInView } from 'framer-motion';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 
 export const Project = () => {
+	const controlProject = useAnimationControls();
+	const refProject = useRef(null);
+	const inViewProject = useInView(refProject);
+
+	useEffect(() => {
+		if (inViewProject) {
+			controlProject.start({ x: 0, opacity: 1, transition: { duration: 1 } });
+		}
+	}, [inViewProject, controlProject]);
+
 	return (
 		<section className="bg-white py-48">
-			<div className="mx-auto max-w-5xl px-6 text-center">
+			<motion.div
+				ref={refProject}
+				initial={{ x: 100, opacity: 0 }}
+				animate={controlProject}
+				className="mx-auto max-w-5xl px-6 text-center"
+			>
 				<h2 className="text-2xl font-semibold text-black">Side Projects</h2>
 
 				<div className="mt-10 flex items-center justify-center">
@@ -61,7 +77,7 @@ export const Project = () => {
 						</a>
 					</Link>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };
