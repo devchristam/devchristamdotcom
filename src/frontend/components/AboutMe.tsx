@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { IconReact } from './icons/IconReact';
 import { IconVuejs } from './icons/IconVuejs';
-import { IconSass } from './icons/IconSass';
 import { IconNode } from './icons/IconNode';
 import { IconLaravel } from './icons/IconLaravel';
 import { IconGitAlt } from './icons/IconGitAlt';
