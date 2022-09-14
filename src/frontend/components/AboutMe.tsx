@@ -5,9 +5,14 @@ import { IconSass } from './icons/IconSass';
 import { IconNode } from './icons/IconNode';
 import { IconLaravel } from './icons/IconLaravel';
 import { IconGitAlt } from './icons/IconGitAlt';
-import { IconPython } from './icons/IconPython';
-import { IconDatabase } from './icons/IconDatabase';
 import { motion, useAnimationControls, useInView } from 'framer-motion';
+import { IconTailwind } from './icons/IconTailwind';
+import { IconNextjs } from './icons/IconNextjs';
+import { IconNestjs } from './icons/IconNestjs';
+import { IconMysql } from './icons/IconMysql';
+import { IconMongo } from './icons/IconMongo';
+import { IconGraphql } from './icons/IconGraphql';
+import { IconAWS } from './icons/IconAWS';
 
 export const AboutMe = () => {
 	const controlAboutMe = useAnimationControls();
@@ -21,12 +26,16 @@ export const AboutMe = () => {
 	useEffect(() => {
 		if (inViewAboutMe) {
 			controlAboutMe.start({ opacity: 1, transition: { duration: 1 } });
+		} else {
+			controlAboutMe.start({ opacity: 0, transition: { duration: 1 } });
 		}
 	}, [inViewAboutMe, controlAboutMe]);
 
 	useEffect(() => {
 		if (inViewSkill) {
 			controlSkill.start({ opacity: 1, transition: { duration: 1 } });
+		} else {
+			controlSkill.start({ opacity: 0, transition: { duration: 1 } });
 		}
 	}, [inViewSkill, controlSkill]);
 
@@ -40,8 +49,10 @@ export const AboutMe = () => {
 				>
 					<h2 className="text-5xl font-semibold text-white">About Me</h2>
 					<p className="mt-4 text-2xl text-white">
-						I am Chris Tam from Hong Kong, love to learn new technologies about
-						web development and implement it into my work.
+						I am Chris Tam from Hong Kong, love to learn new things about
+						software development. I work on full-stack web development and enjoy
+						exchanging ideas between developers. Besides software development, I
+						like custom keyboards, arcade games and trading card games.
 					</p>
 				</motion.div>
 			</div>
@@ -54,7 +65,7 @@ export const AboutMe = () => {
 				<h2 className="text-5xl font-semibold text-white"> Skills </h2>
 				<div className="mt-4 text-xl text-white">
 					<div className="mt-10 flex items-center justify-center">
-						<div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
+						<div className="grid grid-cols-3 gap-6 sm:grid-cols-4 lg:grid-cols-6">
 							<span className="tooltip hover:text-yellow-200">
 								<IconReact cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
@@ -68,16 +79,27 @@ export const AboutMe = () => {
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
-								<IconSass cl="h-24 w-24 fill-current" />
+								<IconNextjs cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
-									Responsive web design with CSS, Sass, Bootstrap and
+									NextJS
+								</span>
+							</span>
+							<span className="tooltip hover:text-yellow-200">
+								<IconTailwind cl="h-24 w-24 fill-current" />
+								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
 									Tailwindcss
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
 								<IconNode cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
-									NodeJS and Express
+									NodeJS
+								</span>
+							</span>
+							<span className="tooltip hover:text-yellow-200">
+								<IconNestjs cl="h-24 w-24 fill-current" />
+								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
+									NestJS
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
@@ -87,21 +109,33 @@ export const AboutMe = () => {
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
+								<IconGraphql cl="h-24 w-24 fill-current" />
+								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
+									GraphQL
+								</span>
+							</span>
+							<span className="tooltip hover:text-yellow-200">
+								<IconAWS cl="h-24 w-24 fill-current" />
+								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
+									AWS
+								</span>
+							</span>
+							<span className="tooltip hover:text-yellow-200">
 								<IconGitAlt cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
 									Git
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
-								<IconPython cl="h-24 w-24 fill-current" />
+								<IconMysql cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
-									Python
+									MySQL
 								</span>
 							</span>
 							<span className="tooltip hover:text-yellow-200">
-								<IconDatabase cl="h-24 w-24 fill-current" />
+								<IconMongo cl="h-24 w-24 fill-current" />
 								<span className="tooltip-text -mt-6 -ml-6 rounded bg-green-800 text-white opacity-80">
-									MySQL and MongoDB
+									MongoDB
 								</span>
 							</span>
 						</div>

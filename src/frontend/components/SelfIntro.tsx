@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls, useInView } from 'framer-motion';
 
 export const SelfIntro = () => {
+	const controlSelfIntro = useAnimationControls();
+	const refSelfIntro = useRef(null);
+	const inViewSelfIntro = useInView(refSelfIntro);
+
+	useEffect(() => {
+		if (inViewSelfIntro) {
+			controlSelfIntro.start({
+				y: 0,
+				opacity: 1,
+				transition: {
+					duration: 1,
+				},
+			});
+		} else {
+			controlSelfIntro.start({ y: 100, opacity: 0 });
+		}
+	}, [inViewSelfIntro, controlSelfIntro]);
+
 	return (
 		<div className="my-20 min-h-[70vh] bg-white">
 			<motion.div
+				ref={refSelfIntro}
 				initial={{ y: 100, opacity: 0 }}
-				animate={{
-					y: 0,
-					opacity: 1,
-					transition: {
-						duration: 1,
-					},
-				}}
+				animate={controlSelfIntro}
 				className="mx-auto max-w-2xl px-6 text-center"
 			>
 				<h2 className="text-5xl font-semibold text-gray-800">

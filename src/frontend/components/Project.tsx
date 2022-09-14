@@ -11,6 +11,8 @@ export const Project = () => {
 	useEffect(() => {
 		if (inViewProject) {
 			controlProject.start({ x: 0, opacity: 1, transition: { duration: 1 } });
+		} else {
+			controlProject.start({ x: 100, opacity: 0 });
 		}
 	}, [inViewProject, controlProject]);
 
@@ -22,7 +24,7 @@ export const Project = () => {
 				animate={controlProject}
 				className="mx-auto max-w-5xl px-6 text-center"
 			>
-				<h2 className="text-2xl font-semibold text-black">Side Projects</h2>
+				<h2 className="text-2xl font-semibold text-black">Projects</h2>
 
 				<div className="mt-10 flex items-center justify-center">
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
