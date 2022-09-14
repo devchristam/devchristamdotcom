@@ -30,6 +30,15 @@ export const Project = () => {
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 						<ProjectCard
 							detail={{
+								title: 'Personal website',
+								img: '/image/proj3.jpg',
+								content: 'A personal website to introduce myself',
+								tech: ['React', 'TailwindCSS', 'NextJS', 'Framer Motion'],
+								url: 'https://github.com/devchristam/nextjs-personal-website',
+							}}
+						/>
+						<ProjectCard
+							detail={{
 								title: 'Authorization system',
 								img: '/image/proj1.png',
 								content:
@@ -48,21 +57,19 @@ export const Project = () => {
 						/>
 						<ProjectCard
 							detail={{
-								title: 'Weather widget',
-								img: '/image/proj2.png',
+								title: 'NextJS GraphQL Template',
+								img: '/image/proj4.png',
 								content:
-									'a react component to display current weather by openweathermap Api',
-								tech: ['React', 'TailwindCSS'],
-								url: 'https://github.com/devchristam/tailwindcss-react-weather-widget',
-							}}
-						/>
-						<ProjectCard
-							detail={{
-								title: 'Personal website',
-								img: '/image/proj3.jpg',
-								content: 'A personal website to introduce myself',
-								tech: ['React', 'TailwindCSS', 'Next.js'],
-								url: 'https://github.com/devchristam/nextjs-personal-website',
+									'A Next.js full-stack boilerplate with type-safe end-to-end GraphQL API connection, authorization and authentication',
+								tech: [
+									'NextJS',
+									'TailwindCSS',
+									'GraphQL',
+									'Prisma',
+									'React Query',
+									'NextAuth',
+								],
+								url: 'https://github.com/devchristam/nextjs-graphql-fullstack',
 							}}
 						/>
 					</div>
