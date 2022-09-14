@@ -1,3 +1,5 @@
-# NextJS GraphQL Fullstack Template
+# devchristam.com
 
-My personal website with NextJS and TailwindCSS
+My personal website with next.js, tailwindCSS and framer motion
+
+- [link](https://devchristam.com)
