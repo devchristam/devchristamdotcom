@@ -32,7 +32,7 @@ export const Project = () => {
 							detail={{
 								title: 'Personal website',
 								img: '/image/proj3.jpg',
-								content: 'A personal website to introduce myself',
+								content: 'My personal website',
 								tech: ['React', 'TailwindCSS', 'NextJS', 'Framer Motion'],
 								url: 'https://github.com/devchristam/nextjs-personal-website',
 							}}
