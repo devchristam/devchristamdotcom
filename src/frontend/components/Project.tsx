@@ -49,7 +49,7 @@ export const Project = () => {
 									'Bulma',
 									'Express',
 									'MongoDB',
-									'Mongoose ODM',
+									'Mongoose',
 									'Docker',
 								],
 								url: 'https://github.com/devchristam/vue3-login-system',
