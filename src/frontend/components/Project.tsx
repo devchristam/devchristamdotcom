@@ -34,7 +34,7 @@ export const Project = () => {
 								img: '/image/proj3.jpg',
 								content: 'My personal website',
 								tech: ['React', 'TailwindCSS', 'NextJS', 'Framer Motion'],
-								url: 'https://github.com/devchristam/nextjs-personal-website',
+								url: 'https://github.com/devchristam/devchristamdotcom',
 							}}
 						/>
 						<ProjectCard

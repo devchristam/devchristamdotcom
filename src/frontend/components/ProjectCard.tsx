@@ -43,7 +43,7 @@ const ProjectCard = (props: projectCardInterface) => {
 				/>
 			</div>
 
-			<div className="block min-h-[14rem] overflow-hidden rounded-b-xl bg-gray-200">
+			<div className="block h-56 min-h-[14rem] overflow-hidden rounded-b-xl bg-gray-200">
 				<div className="flex h-full flex-col justify-between py-2 px-3 text-center text-sm">
 					<div>
 						<p className="text-xl font-bold text-gray-900">
