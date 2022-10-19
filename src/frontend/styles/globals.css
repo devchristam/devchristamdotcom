@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-scrollbar-width: none;
+::-webkit-scrollbar {
+	width: none;
+}
 
 .tooltip .tooltip-text {
 	@apply invisible p-4 absolute z-50 rounded-lg text-white border-2 border-green-200;
