@@ -10,9 +10,9 @@ export const Project = () => {
 
 	useEffect(() => {
 		if (inViewProject) {
-			controlProject.start({ x: 0, opacity: 1, transition: { duration: 1 } });
+			controlProject.start({ y: 0, opacity: 1, transition: { duration: 1 } });
 		} else {
-			controlProject.start({ x: 100, opacity: 0 });
+			controlProject.start({ y: 100, opacity: 0 });
 		}
 	}, [inViewProject, controlProject]);
 
@@ -20,7 +20,7 @@ export const Project = () => {
 		<section className="bg-white py-48">
 			<motion.div
 				ref={refProject}
-				initial={{ x: 100, opacity: 0 }}
+				initial={{ y: 100, opacity: 0 }}
 				animate={controlProject}
 				className="mx-auto max-w-5xl px-6 text-center"
 			>
